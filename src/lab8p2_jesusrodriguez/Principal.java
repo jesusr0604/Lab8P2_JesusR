@@ -45,7 +45,6 @@ public class Principal extends javax.swing.JFrame {
         Record1 = new javax.swing.JTextField();
         CBNE2 = new javax.swing.JComboBox<>();
         CBNd2 = new javax.swing.JComboBox<>();
-        jPanel7 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         SwimmerName = new javax.swing.JTextField();
@@ -81,8 +80,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         Age1 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        CBN1 = new javax.swing.JComboBox<>();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         MedalsIn1 = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
@@ -92,6 +89,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         DELETEN = new javax.swing.JButton();
         MODN = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -168,25 +169,17 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.add(Record1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 160, -1));
 
         CBNE2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libre", "Pecho", "Dorso", "Mariposa", " " }));
+        CBNE2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CBNE2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(CBNE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 30));
 
         CBNd2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "400", "800", " " }));
         jPanel2.add(CBNd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 30));
 
         jTabbedPane1.addTab("Modificar/Eliminar Evento", jPanel2);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Modificar/Eliminar", jPanel7);
 
         jPanel4.setBackground(new java.awt.Color(51, 0, 153));
 
@@ -247,13 +240,13 @@ public class Principal extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(68, 68, 68)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(RecordTime, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                                    .addComponent(RecordTime, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel11)
                                     .addComponent(MedalsIn))
                                 .addGap(118, 118, 118))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                                 .addComponent(AddSwimmer, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(62, 62, 62))))))
         );
@@ -296,7 +289,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CBNd, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(748, Short.MAX_VALUE))
+                .addContainerGap(773, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Nadador", jPanel4);
@@ -347,7 +340,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MedalsC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(820, Short.MAX_VALUE))
+                .addContainerGap(845, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Pais", jPanel5);
@@ -356,11 +349,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 716, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
+            .addGap(0, 1155, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Simulacion", jPanel8);
@@ -388,12 +381,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel20.setText("Edad");
         jPanel6.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
-
-        CBN1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel6.add(CBN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 185, -1));
-
-        jLabel21.setText("Nacionalidad");
-        jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jLabel22.setText("Nadador");
         jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
@@ -430,7 +417,48 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificar/Eliminar Nadador", jPanel6);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 6, 630, -1));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jButton2.setText("Actualizar");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jButton2))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(762, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Listar", jPanel9);
+
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 630, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -446,12 +474,76 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MODNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODNMouseClicked
+        String name= SwimmerName1.getText();
+        
+        int edad= Integer.parseInt(Age1.getText());
+        double es= Double.parseDouble(Height1.getText());
+        String Style= "";
+        if (CBNE3.getSelectedIndex()==0) {
+            Style= "Libre";
+        } else if(CBNE3.getSelectedIndex()==1){
+            Style= "Pecho";
+        }else if(CBNE3.getSelectedIndex()==2){
+            Style= "Dorso";
+        }else if(CBNE3.getSelectedIndex()==3){
+            Style="Mariposa";
+        }
+        int distance= 0;
+        if (CBNd3.getSelectedIndex()==0) {
+            distance=100;
+        } else if(CBNd3.getSelectedIndex()==1){
+            distance=200;
+        }else if(CBNd3.getSelectedIndex()==2){
+            distance=400;
+        }else if(CBNd3.getSelectedIndex()==3){
+            distance=800;
+        }
+        int rec= Integer.parseInt(RecordTime.getText());
+        int medals= Integer.parseInt(MedalsIn.getText());
+      
+            swimmers.get(CBNA.getSelectedIndex()).setNombre(name);
+            
+            swimmers.get(CBNA.getSelectedIndex()).setEdad(edad);
+            swimmers.get(CBNA.getSelectedIndex()).setHeight(es);
+            swimmers.get(CBNA.getSelectedIndex()).setMedals(medals);
+            swimmers.get(CBNA.getSelectedIndex()).setDis(distance);
+            swimmers.get(CBNA.getSelectedIndex()).setNadar(Style);
+            swimmers.get(CBNA.getSelectedIndex()).setRap(rec);
+            JOptionPane.showMessageDialog(null, "Nadador Editado");
+            SwimmerName.setText("");
+            Age.setText("");
+            Height.setText("");
+
+            RecordTime.setText("");
+            MedalsIn.setText("");
+            CBNA.setModel(updateComboboxN());
+        
+           
+    }//GEN-LAST:event_MODNMouseClicked
+
+    private void DELETENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETENMouseClicked
+        swimmers.remove(CBNA.getSelectedIndex());
+        CBNA.setModel(updateComboboxN());
+    }//GEN-LAST:event_DELETENMouseClicked
+
+    private void ADDCOUNTRYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ADDCOUNTRYMouseClicked
+        String namep= NameP.getText();
+        int medalsp= Integer.parseInt(MedalsC.getText());
+        Country.add(new Pais(namep,medalsp));
+        NameP.setText("");
+        MedalsC.setText("");
+        JOptionPane.showMessageDialog(null, "Pais Agregado");
+        CBN.setModel(updateComboboxC());
+
+    }//GEN-LAST:event_ADDCOUNTRYMouseClicked
+
     private void AddSwimmerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddSwimmerMouseClicked
-       String name= SwimmerName.getText();
-       Pais countries = Country.get(CBN.getSelectedIndex());
-       int edad= Integer.parseInt(Age.getText());
-       double es= Double.parseDouble(Height.getText());
-       String Style= "";
+        String name= SwimmerName.getText();
+        Pais countries = Country.get(CBN.getSelectedIndex());
+        int edad= Integer.parseInt(Age.getText());
+        double es= Double.parseDouble(Height.getText());
+        String Style= "";
         if (CBNE.getSelectedIndex()==0) {
             Style= "Libre";
         } else if(CBNE.getSelectedIndex()==1){
@@ -471,36 +563,61 @@ public class Principal extends javax.swing.JFrame {
         }else if(CBNd.getSelectedIndex()==3){
             distance=800;
         }
-       int rec= Integer.parseInt(RecordTime.getText());
-       int medals= Integer.parseInt(MedalsIn.getText());
+        int rec= Integer.parseInt(RecordTime.getText());
+        int medals= Integer.parseInt(MedalsIn.getText());
         if (countries.getNadador().size()<2) {
             countries.getNadador().add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
             swimmers.add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
-       JOptionPane.showMessageDialog(null, "Nadador Agregado");
-       SwimmerName.setText("");
-       Age.setText("");
-       Height.setText("");
-       
-       RecordTime.setText("");
-       MedalsIn.setText("");
-       CBNA.setModel(updateComboboxN());
+            JOptionPane.showMessageDialog(null, "Nadador Agregado");
+            SwimmerName.setText("");
+            Age.setText("");
+            Height.setText("");
+
+            RecordTime.setText("");
+            MedalsIn.setText("");
+            CBNA.setModel(updateComboboxN());
         }else{
             JOptionPane.showMessageDialog(null, "Ya esta lleno Pibe");
         }
-       
-       
+
     }//GEN-LAST:event_AddSwimmerMouseClicked
 
-    private void ADDCOUNTRYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ADDCOUNTRYMouseClicked
-        String namep= NameP.getText();
-        int medalsp= Integer.parseInt(MedalsC.getText());
-        Country.add(new Pais(namep,medalsp));
-        NameP.setText("");
-        MedalsC.setText("");
-        JOptionPane.showMessageDialog(null, "Pais Agregado");
-        CBN.setModel(updateComboboxC());
-        
-    }//GEN-LAST:event_ADDCOUNTRYMouseClicked
+    private void DELETEEVTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEEVTMouseClicked
+        event.remove(CBEV.getSelectedIndex());
+        CBEV.setModel(updateComboboxE());
+    }//GEN-LAST:event_DELETEEVTMouseClicked
+
+    private void MODEVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODEVMouseClicked
+
+        double record= Double.parseDouble(Record1.getText());
+
+        int distance= 0;
+        String Style= "";
+        if (CBNE2.getSelectedIndex()==0) {
+            Style= "Libre";
+        } else if(CBNE2.getSelectedIndex()==1){
+            Style= "Pecho";
+        }else if(CBNE2.getSelectedIndex()==2){
+            Style= "Dorso";
+        }else if(CBNE2.getSelectedIndex()==3){
+            Style="Mariposa";
+        }
+
+        if (CBNd2.getSelectedIndex()==0) {
+            distance=100;
+        } else if(CBNd2.getSelectedIndex()==1){
+            distance=200;
+        }else if(CBNd2.getSelectedIndex()==2){
+            distance=400;
+        }else if(CBNd2.getSelectedIndex()==3){
+            distance=800;
+        }
+        event.get(CBEV.getSelectedIndex()).setDistancia(distance);
+        event.get(CBEV.getSelectedIndex()).setEstilo(Style);
+        event.get(CBEV.getSelectedIndex()).setRecord(record);
+        CBEV.setModel(updateComboboxE());
+        JOptionPane.showMessageDialog(null, "Evento Modificado");
+    }//GEN-LAST:event_MODEVMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         String Style= "";
@@ -528,103 +645,13 @@ public class Principal extends javax.swing.JFrame {
         CBEV.setModel(updateComboboxE());
         JOptionPane.showMessageDialog(null, "Evento Creado");
 
-        
         Record.setText("");
-        
 
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void DELETEEVTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEEVTMouseClicked
-        event.remove(CBEV.getSelectedIndex());
-        CBEV.setModel(updateComboboxE());
-    }//GEN-LAST:event_DELETEEVTMouseClicked
-
-    private void MODEVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODEVMouseClicked
-      
-        double record= Double.parseDouble(Record1.getText());
-        
-        
-        
-        int distance= 0;
-        String Style= "";
-        if (CBNE2.getSelectedIndex()==0) {
-            Style= "Libre";
-        } else if(CBNE2.getSelectedIndex()==1){
-            Style= "Pecho";
-        }else if(CBNE2.getSelectedIndex()==2){
-            Style= "Dorso";
-        }else if(CBNE2.getSelectedIndex()==3){
-            Style="Mariposa";
-        }
-        
-        if (CBNd2.getSelectedIndex()==0) {
-            distance=100;
-        } else if(CBNd2.getSelectedIndex()==1){
-            distance=200;
-        }else if(CBNd2.getSelectedIndex()==2){
-            distance=400;
-        }else if(CBNd2.getSelectedIndex()==3){
-            distance=800;
-        }
-        event.get(CBEV.getSelectedIndex()).setDistancia(distance);
-         event.get(CBEV.getSelectedIndex()).setEstilo(Style);
-          event.get(CBEV.getSelectedIndex()).setRecord(record);
-           CBEV.setModel(updateComboboxE());
-    }//GEN-LAST:event_MODEVMouseClicked
-
-    private void MODNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODNMouseClicked
-        String name= SwimmerName1.getText();
-       Pais countries = Country.get(CBN1.getSelectedIndex());
-       int edad= Integer.parseInt(Age1.getText());
-       double es= Double.parseDouble(Height1.getText());
-       String Style= "";
-        if (CBNE3.getSelectedIndex()==0) {
-            Style= "Libre";
-        } else if(CBNE3.getSelectedIndex()==1){
-            Style= "Pecho";
-        }else if(CBNE3.getSelectedIndex()==2){
-            Style= "Dorso";
-        }else if(CBNE3.getSelectedIndex()==3){
-            Style="Mariposa";
-        }
-        int distance= 0;
-        if (CBNd3.getSelectedIndex()==0) {
-            distance=100;
-        } else if(CBNd3.getSelectedIndex()==1){
-            distance=200;
-        }else if(CBNd3.getSelectedIndex()==2){
-            distance=400;
-        }else if(CBNd3.getSelectedIndex()==3){
-            distance=800;
-        }
-       int rec= Integer.parseInt(RecordTime.getText());
-       int medals= Integer.parseInt(MedalsIn.getText());
-        if (countries.getNadador().size()<2) {
-            swimmers.get(CBNA.getSelectedIndex()).setNombre(name);
-            swimmers.get(CBNA.getSelectedIndex()).setNacion(countries);
-            swimmers.get(CBNA.getSelectedIndex()).setEdad(edad);
-            swimmers.get(CBNA.getSelectedIndex()).setHeight(es);
-            swimmers.get(CBNA.getSelectedIndex()).setMedals(medals);
-            swimmers.get(CBNA.getSelectedIndex()).setDis(distance);
-            swimmers.get(CBNA.getSelectedIndex()).setNadar(Style);
-            swimmers.get(CBNA.getSelectedIndex()).setRap(rec);
-       JOptionPane.showMessageDialog(null, "Nadador Editado");
-       SwimmerName.setText("");
-       Age.setText("");
-       Height.setText("");
-       
-       RecordTime.setText("");
-       MedalsIn.setText("");
-       CBNA.setModel(updateComboboxN());
-        }else{
-            JOptionPane.showMessageDialog(null, "Ya esta lleno Pibe");
-        }
-    }//GEN-LAST:event_MODNMouseClicked
-
-    private void DELETENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETENMouseClicked
-        swimmers.remove(CBNA.getSelectedIndex());
-        CBNA.setModel(updateComboboxN());
-    }//GEN-LAST:event_DELETENMouseClicked
+    private void CBNE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBNE2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CBNE2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -697,7 +724,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField Age1;
     private javax.swing.JComboBox<String> CBEV;
     private javax.swing.JComboBox<String> CBN;
-    private javax.swing.JComboBox<String> CBN1;
     private javax.swing.JComboBox<String> CBNA;
     private javax.swing.JComboBox<String> CBNE;
     private javax.swing.JComboBox<String> CBNE1;
@@ -724,6 +750,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField SwimmerName;
     private javax.swing.JTextField SwimmerName1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -738,7 +765,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -756,8 +782,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
