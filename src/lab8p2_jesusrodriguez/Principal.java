@@ -36,7 +36,15 @@ public class Principal extends javax.swing.JFrame {
         CBNE1 = new javax.swing.JComboBox<>();
         CBNd1 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
+        CBEV = new javax.swing.JComboBox<>();
+        MODEV = new javax.swing.JButton();
+        DELETEEVT = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        Record1 = new javax.swing.JTextField();
+        CBNE2 = new javax.swing.JComboBox<>();
+        CBNd2 = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -63,6 +71,23 @@ public class Principal extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         ADDCOUNTRY = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        CBNE3 = new javax.swing.JComboBox<>();
+        SwimmerName1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        CBNd3 = new javax.swing.JComboBox<>();
+        Height1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        Age1 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        CBN1 = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        MedalsIn1 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        RecordTime1 = new javax.swing.JTextField();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -103,31 +128,48 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Evento", jPanel3);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
-        );
+        jPanel2.setBackground(new java.awt.Color(255, 51, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CBEV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(CBEV, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 6, 266, 36));
+
+        MODEV.setText("Modificar Evento");
+        MODEV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MODEVMouseClicked(evt);
+            }
+        });
+        jPanel2.add(MODEV, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 267, 136));
+
+        DELETEEVT.setText("Eliminar Evento");
+        DELETEEVT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DELETEEVTMouseClicked(evt);
+            }
+        });
+        jPanel2.add(DELETEEVT, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 267, 136));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel14.setText("Estilo");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 108, 41));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel15.setText("Distancia");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 30));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        jLabel16.setText("Record");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        jPanel2.add(Record1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 160, -1));
+
+        CBNE2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libre", "Pecho", "Dorso", "Mariposa", " " }));
+        jPanel2.add(CBNE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 30));
+
+        CBNd2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "400", "800", " " }));
+        jPanel2.add(CBNd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 30));
 
         jTabbedPane1.addTab("Modificar/Eliminar Evento", jPanel2);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Modificar/Eliminar Nadador", jPanel6);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -137,7 +179,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
+            .addGap(0, 1130, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar", jPanel7);
@@ -250,7 +292,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CBNd, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(534, Short.MAX_VALUE))
+                .addContainerGap(748, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Nadador", jPanel4);
@@ -301,7 +343,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MedalsC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(606, Short.MAX_VALUE))
+                .addContainerGap(820, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Pais", jPanel5);
@@ -314,10 +356,53 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
+            .addGap(0, 1130, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Simulacion", jPanel8);
+
+        jPanel6.setBackground(new java.awt.Color(153, 153, 0));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        CBNE3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libre", "Pecho", "Dorso", "Mariposa", " " }));
+        jPanel6.add(CBNE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 185, -1));
+        jPanel6.add(SwimmerName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 185, -1));
+
+        jLabel17.setText("Distancia");
+        jPanel6.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+
+        jLabel18.setText("Estilo");
+        jPanel6.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        CBNd3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "400", "800", " " }));
+        jPanel6.add(CBNd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 185, -1));
+        jPanel6.add(Height1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 185, -1));
+
+        jLabel19.setText("Estatura");
+        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        jPanel6.add(Age1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 185, -1));
+
+        jLabel20.setText("Edad");
+        jPanel6.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        CBN1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel6.add(CBN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 185, -1));
+
+        jLabel21.setText("Nacionalidad");
+        jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jLabel22.setText("Nombre");
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel6.add(MedalsIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 102, 150, 20));
+
+        jLabel23.setText("Medallas");
+        jPanel6.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
+
+        jLabel24.setText("Tiempo Record");
+        jPanel6.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        jPanel6.add(RecordTime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 140, -1));
+
+        jTabbedPane1.addTab("Modificar/Eliminar Nadador", jPanel6);
 
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 6, 630, -1));
 
@@ -329,7 +414,7 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
         );
 
         pack();
@@ -340,11 +425,29 @@ public class Principal extends javax.swing.JFrame {
        Pais countries = Country.get(CBN.getSelectedIndex());
        int edad= Integer.parseInt(Age.getText());
        double es= Double.parseDouble(Height.getText());
-       String style= CBNE.getSelectedObjects().toString();
-       int distancia= Integer.parseInt(CBNd.getSelectedObjects().toString());
+       String Style= "";
+        if (CBNE.getSelectedIndex()==0) {
+            Style= "Libre";
+        } else if(CBNE.getSelectedIndex()==1){
+            Style= "Pecho";
+        }else if(CBNE.getSelectedIndex()==2){
+            Style= "Dorso";
+        }else if(CBNE.getSelectedIndex()==3){
+            Style="Mariposa";
+        }
+        int distance= 0;
+        if (CBNd1.getSelectedIndex()==0) {
+            distance=100;
+        } else if(CBNd.getSelectedIndex()==1){
+            distance=200;
+        }else if(CBNd.getSelectedIndex()==2){
+            distance=400;
+        }else if(CBNd.getSelectedIndex()==3){
+            distance=800;
+        }
        int rec= Integer.parseInt(RecordTime.getText());
        int medals= Integer.parseInt(MedalsIn.getText());
-       swimmers.add(new Nadadores(name,countries,edad,es,style,distancia,rec,medals));
+       swimmers.add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
        JOptionPane.showMessageDialog(null, "Nadador Agregado");
        SwimmerName.setText("");
        Age.setText("");
@@ -367,10 +470,29 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ADDCOUNTRYMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String Style= CBNE1.getSelectedObjects().toString();
+        String Style= "";
+        if (CBNE1.getSelectedIndex()==0) {
+            Style= "Libre";
+        } else if(CBNE1.getSelectedIndex()==1){
+            Style= "Pecho";
+        }else if(CBNE1.getSelectedIndex()==2){
+            Style= "Dorso";
+        }else if(CBNE1.getSelectedIndex()==3){
+            Style="Mariposa";
+        }
         double record= Double.parseDouble(Record.getText());
-        int distance= Integer.parseInt(CBNd1.getSelectedObjects().toString());
+        int distance= 0;
+        if (CBNd1.getSelectedIndex()==0) {
+            distance=100;
+        } else if(CBNd.getSelectedIndex()==1){
+            distance=200;
+        }else if(CBNd.getSelectedIndex()==2){
+            distance=400;
+        }else if(CBNd.getSelectedIndex()==3){
+            distance=800;
+        }
         event.add(new Evento(Style,distance,record));
+        CBEV.setModel(updateComboboxE());
         JOptionPane.showMessageDialog(null, "Evento Creado");
 
         
@@ -378,6 +500,44 @@ public class Principal extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void DELETEEVTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEEVTMouseClicked
+        event.remove(CBEV.getSelectedIndex());
+        CBEV.setModel(updateComboboxE());
+    }//GEN-LAST:event_DELETEEVTMouseClicked
+
+    private void MODEVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODEVMouseClicked
+      
+        double record= Double.parseDouble(Record1.getText());
+        
+        
+        
+        int distance= 0;
+        String Style= "";
+        if (CBNE2.getSelectedIndex()==0) {
+            Style= "Libre";
+        } else if(CBNE2.getSelectedIndex()==1){
+            Style= "Pecho";
+        }else if(CBNE2.getSelectedIndex()==2){
+            Style= "Dorso";
+        }else if(CBNE2.getSelectedIndex()==3){
+            Style="Mariposa";
+        }
+        
+        if (CBNd2.getSelectedIndex()==0) {
+            distance=100;
+        } else if(CBNd2.getSelectedIndex()==1){
+            distance=200;
+        }else if(CBNd2.getSelectedIndex()==2){
+            distance=400;
+        }else if(CBNd2.getSelectedIndex()==3){
+            distance=800;
+        }
+        event.get(CBEV.getSelectedIndex()).setDistancia(distance);
+         event.get(CBEV.getSelectedIndex()).setEstilo(Style);
+          event.get(CBEV.getSelectedIndex()).setRecord(record);
+           CBEV.setModel(updateComboboxE());
+    }//GEN-LAST:event_MODEVMouseClicked
 
     /**
      * @param args the command line arguments
@@ -424,22 +584,55 @@ public class Principal extends javax.swing.JFrame {
         return model;
     }
 
+      public DefaultComboBoxModel updateComboboxN() {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Nadadores v : swimmers) {
+            model.addElement(v);
+
+        }
+        return model;
+    }
+      
+       public DefaultComboBoxModel updateComboboxE() {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Evento v : event) {
+            model.addElement(v);
+
+        }
+        return model;
+    }
+      
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADDCOUNTRY;
     private javax.swing.JButton AddSwimmer;
     private javax.swing.JTextField Age;
+    private javax.swing.JTextField Age1;
+    private javax.swing.JComboBox<String> CBEV;
     private javax.swing.JComboBox<String> CBN;
+    private javax.swing.JComboBox<String> CBN1;
     private javax.swing.JComboBox<String> CBNE;
     private javax.swing.JComboBox<String> CBNE1;
+    private javax.swing.JComboBox<String> CBNE2;
+    private javax.swing.JComboBox<String> CBNE3;
     private javax.swing.JComboBox<String> CBNd;
     private javax.swing.JComboBox<String> CBNd1;
+    private javax.swing.JComboBox<String> CBNd2;
+    private javax.swing.JComboBox<String> CBNd3;
+    private javax.swing.JButton DELETEEVT;
     private javax.swing.JTextField Height;
+    private javax.swing.JTextField Height1;
+    private javax.swing.JButton MODEV;
     private javax.swing.JTextField MedalsC;
     private javax.swing.JTextField MedalsIn;
+    private javax.swing.JTextField MedalsIn1;
     private javax.swing.JTextField NameP;
     private javax.swing.JTextField Record;
+    private javax.swing.JTextField Record1;
     private javax.swing.JTextField RecordTime;
+    private javax.swing.JTextField RecordTime1;
     private javax.swing.JTextField SwimmerName;
+    private javax.swing.JTextField SwimmerName1;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -447,7 +640,18 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
