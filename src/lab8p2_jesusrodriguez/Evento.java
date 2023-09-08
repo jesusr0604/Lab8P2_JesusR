@@ -43,7 +43,7 @@ private static final long SerialVersionUID=555L;
 
     @Override
     public String toString() {
-        return "Evento{" + "estilo=" + estilo + ", distancia=" + distancia + ", record=" + record + '}';
+        return estilo ;
     }
     
     
