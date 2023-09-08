@@ -32,9 +32,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Record = new javax.swing.JTextField();
-        Estilo = new javax.swing.JTextField();
-        Distancia = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        CBNE1 = new javax.swing.JComboBox<>();
+        CBNd1 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -47,15 +47,15 @@ public class Principal extends javax.swing.JFrame {
         Age = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         Height = new javax.swing.JTextField();
-        Style = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        Distance = new javax.swing.JTextField();
         RecordTime = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         MedalsIn = new javax.swing.JTextField();
         AddSwimmer = new javax.swing.JButton();
+        CBNE = new javax.swing.JComboBox<>();
+        CBNd = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         NameP = new javax.swing.JTextField();
@@ -76,7 +76,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         jLabel1.setText("Estilo");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 108, 41));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 108, 41));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         jLabel2.setText("Distancia");
@@ -86,8 +86,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setText("Record");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
         jPanel3.add(Record, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 160, -1));
-        jPanel3.add(Estilo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 160, -1));
-        jPanel3.add(Distancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 160, -1));
 
         jButton1.setText("Crear Evento");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,6 +94,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 300, 310));
+
+        CBNE1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libre", "Pecho", "Dorso", "Mariposa", " " }));
+        jPanel3.add(CBNE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 170, 30));
+
+        CBNd1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "400", "800", " " }));
+        jPanel3.add(CBNd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 30));
 
         jTabbedPane1.addTab("Crear Evento", jPanel3);
 
@@ -107,7 +111,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGap(0, 916, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar Evento", jPanel2);
@@ -120,7 +124,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGap(0, 916, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar Nadador", jPanel6);
@@ -133,7 +137,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGap(0, 916, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar", jPanel7);
@@ -165,6 +169,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        CBNE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libre", "Pecho", "Dorso", "Mariposa", " " }));
+
+        CBNd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100", "200", "400", "800", " " }));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -172,32 +180,36 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel6)
-                        .addComponent(CBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addComponent(SwimmerName)
-                        .addComponent(jLabel4)
-                        .addComponent(Age)
-                        .addComponent(Height)
-                        .addComponent(Style)
-                        .addComponent(Distance, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                        .addComponent(CBNd, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RecordTime, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(MedalsIn))
-                        .addGap(118, 118, 118))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(AddSwimmer, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62))))
+                            .addComponent(jLabel7)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel6)
+                                .addComponent(CBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addComponent(SwimmerName)
+                                .addComponent(jLabel4)
+                                .addComponent(Age)
+                                .addComponent(Height)
+                                .addComponent(CBNE, 0, 185, Short.MAX_VALUE))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RecordTime, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11)
+                                    .addComponent(MedalsIn))
+                                .addGap(118, 118, 118))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                                .addComponent(AddSwimmer, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(62, 62, 62))))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +224,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(40, 40, 40)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,11 +235,7 @@ public class Principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Style, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Distance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CBNE, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,7 +246,11 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(MedalsIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(AddSwimmer, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(515, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CBNd, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(534, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Nadador", jPanel4);
@@ -289,7 +301,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MedalsC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(544, Short.MAX_VALUE))
+                .addContainerGap(606, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Pais", jPanel5);
@@ -302,7 +314,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGap(0, 916, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Simulacion", jPanel8);
@@ -323,27 +335,13 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String Style= Estilo.getText();
-       double record= Double.parseDouble(Record.getText());
-       int distance= Integer.parseInt(Distancia.getText());
-       event.add(new Evento(Style,distance,record));
-        JOptionPane.showMessageDialog(null, "Evento Creado");
-        
-       
-       Estilo.setText("");
-       Record.setText("");
-       Distancia.setText("");
-       
-    }//GEN-LAST:event_jButton1MouseClicked
-
     private void AddSwimmerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddSwimmerMouseClicked
        String name= SwimmerName.getText();
        Pais countries = Country.get(CBN.getSelectedIndex());
        int edad= Integer.parseInt(Age.getText());
        double es= Double.parseDouble(Height.getText());
-       String style= Style.getText();
-       int distancia= Integer.parseInt(Distance.getText());
+       String style= CBNE.getSelectedObjects().toString();
+       int distancia= Integer.parseInt(CBNd.getSelectedObjects().toString());
        int rec= Integer.parseInt(RecordTime.getText());
        int medals= Integer.parseInt(MedalsIn.getText());
        swimmers.add(new Nadadores(name,countries,edad,es,style,distancia,rec,medals));
@@ -351,8 +349,7 @@ public class Principal extends javax.swing.JFrame {
        SwimmerName.setText("");
        Age.setText("");
        Height.setText("");
-       Style.setText("");
-       Distance.setText("");
+       
        RecordTime.setText("");
        MedalsIn.setText("");
        
@@ -368,6 +365,19 @@ public class Principal extends javax.swing.JFrame {
         CBN.setModel(updateComboboxC());
         
     }//GEN-LAST:event_ADDCOUNTRYMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String Style= CBNE1.getSelectedObjects().toString();
+        double record= Double.parseDouble(Record.getText());
+        int distance= Integer.parseInt(CBNd1.getSelectedObjects().toString());
+        event.add(new Evento(Style,distance,record));
+        JOptionPane.showMessageDialog(null, "Evento Creado");
+
+        
+        Record.setText("");
+        
+
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -419,16 +429,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton AddSwimmer;
     private javax.swing.JTextField Age;
     private javax.swing.JComboBox<String> CBN;
-    private javax.swing.JTextField Distance;
-    private javax.swing.JTextField Distancia;
-    private javax.swing.JTextField Estilo;
+    private javax.swing.JComboBox<String> CBNE;
+    private javax.swing.JComboBox<String> CBNE1;
+    private javax.swing.JComboBox<String> CBNd;
+    private javax.swing.JComboBox<String> CBNd1;
     private javax.swing.JTextField Height;
     private javax.swing.JTextField MedalsC;
     private javax.swing.JTextField MedalsIn;
     private javax.swing.JTextField NameP;
     private javax.swing.JTextField Record;
     private javax.swing.JTextField RecordTime;
-    private javax.swing.JTextField Style;
     private javax.swing.JTextField SwimmerName;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
