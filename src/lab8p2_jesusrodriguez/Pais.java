@@ -9,6 +9,8 @@ public class Pais implements Serializable{
     private String name;
     private ArrayList<Nadadores> nadador= new ArrayList();
     private int medallas;
+    private static final long SerialVersionUID=555L;
+
 
     public Pais(String name, int medallas) {
         this.name = name;

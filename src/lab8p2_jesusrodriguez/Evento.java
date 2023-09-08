@@ -8,7 +8,9 @@ public class Evento implements Serializable{
     private String estilo;
     private int distancia;
     private double record;
+private static final long SerialVersionUID=555L;
 
+    
     public Evento(String estilo, int distancia, double record) {
         this.estilo = estilo;
         this.distancia = distancia;

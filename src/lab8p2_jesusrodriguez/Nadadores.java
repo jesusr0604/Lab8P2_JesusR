@@ -14,6 +14,8 @@ public class Nadadores implements Serializable{
     private int dis;
     private int rap;
     private int medals;
+    private static final long SerialVersionUID=555L;
+
 
     public Nadadores(String nombre, Pais nacion, int edad, double height, String nadar, int dis, int rap, int medals) {
         this.nombre = nombre;
