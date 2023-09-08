@@ -1,12 +1,13 @@
 
 package lab8p2_jesusrodriguez;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Pais {
+public class Pais implements Serializable{
     private String name;
-    private ArrayList<Nadadores> nadador;
+    private ArrayList<Nadadores> nadador= new ArrayList();
     private int medallas;
 
     public Pais(String name, int medallas) {

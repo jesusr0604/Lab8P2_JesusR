@@ -1,8 +1,10 @@
 
 package lab8p2_jesusrodriguez;
 
+import java.io.Serializable;
 
-public class Nadadores {
+
+public class Nadadores implements Serializable{
     private String nombre;
     private Pais nacion;
     private String nacional;

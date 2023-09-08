@@ -88,6 +88,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         RecordTime1 = new javax.swing.JTextField();
+        CBNA = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        DELETEN = new javax.swing.JButton();
+        MODN = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -391,8 +395,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setText("Nacionalidad");
         jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        jLabel22.setText("Nombre");
-        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jLabel22.setText("Nadador");
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
         jPanel6.add(MedalsIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 102, 150, 20));
 
         jLabel23.setText("Medallas");
@@ -401,6 +405,28 @@ public class Principal extends javax.swing.JFrame {
         jLabel24.setText("Tiempo Record");
         jPanel6.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
         jPanel6.add(RecordTime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 140, -1));
+
+        CBNA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel6.add(CBNA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, -1));
+
+        jLabel25.setText("Nombre");
+        jPanel6.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        DELETEN.setText("Eliminar");
+        DELETEN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DELETENMouseClicked(evt);
+            }
+        });
+        jPanel6.add(DELETEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 220, 70));
+
+        MODN.setText("Modificar");
+        MODN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MODNMouseClicked(evt);
+            }
+        });
+        jPanel6.add(MODN, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 220, 70));
 
         jTabbedPane1.addTab("Modificar/Eliminar Nadador", jPanel6);
 
@@ -436,7 +462,7 @@ public class Principal extends javax.swing.JFrame {
             Style="Mariposa";
         }
         int distance= 0;
-        if (CBNd1.getSelectedIndex()==0) {
+        if (CBNd.getSelectedIndex()==0) {
             distance=100;
         } else if(CBNd.getSelectedIndex()==1){
             distance=200;
@@ -447,7 +473,9 @@ public class Principal extends javax.swing.JFrame {
         }
        int rec= Integer.parseInt(RecordTime.getText());
        int medals= Integer.parseInt(MedalsIn.getText());
-       swimmers.add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
+        if (countries.getNadador().size()<2) {
+            countries.getNadador().add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
+            swimmers.add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
        JOptionPane.showMessageDialog(null, "Nadador Agregado");
        SwimmerName.setText("");
        Age.setText("");
@@ -455,6 +483,11 @@ public class Principal extends javax.swing.JFrame {
        
        RecordTime.setText("");
        MedalsIn.setText("");
+       CBNA.setModel(updateComboboxN());
+        }else{
+            JOptionPane.showMessageDialog(null, "Ya esta lleno Pibe");
+        }
+       
        
     }//GEN-LAST:event_AddSwimmerMouseClicked
 
@@ -539,6 +572,60 @@ public class Principal extends javax.swing.JFrame {
            CBEV.setModel(updateComboboxE());
     }//GEN-LAST:event_MODEVMouseClicked
 
+    private void MODNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODNMouseClicked
+        String name= SwimmerName1.getText();
+       Pais countries = Country.get(CBN1.getSelectedIndex());
+       int edad= Integer.parseInt(Age1.getText());
+       double es= Double.parseDouble(Height1.getText());
+       String Style= "";
+        if (CBNE3.getSelectedIndex()==0) {
+            Style= "Libre";
+        } else if(CBNE3.getSelectedIndex()==1){
+            Style= "Pecho";
+        }else if(CBNE3.getSelectedIndex()==2){
+            Style= "Dorso";
+        }else if(CBNE3.getSelectedIndex()==3){
+            Style="Mariposa";
+        }
+        int distance= 0;
+        if (CBNd3.getSelectedIndex()==0) {
+            distance=100;
+        } else if(CBNd3.getSelectedIndex()==1){
+            distance=200;
+        }else if(CBNd3.getSelectedIndex()==2){
+            distance=400;
+        }else if(CBNd3.getSelectedIndex()==3){
+            distance=800;
+        }
+       int rec= Integer.parseInt(RecordTime.getText());
+       int medals= Integer.parseInt(MedalsIn.getText());
+        if (countries.getNadador().size()<2) {
+            swimmers.get(CBNA.getSelectedIndex()).setNombre(name);
+            swimmers.get(CBNA.getSelectedIndex()).setNacion(countries);
+            swimmers.get(CBNA.getSelectedIndex()).setEdad(edad);
+            swimmers.get(CBNA.getSelectedIndex()).setHeight(es);
+            swimmers.get(CBNA.getSelectedIndex()).setMedals(medals);
+            swimmers.get(CBNA.getSelectedIndex()).setDis(distance);
+            swimmers.get(CBNA.getSelectedIndex()).setNadar(Style);
+            swimmers.get(CBNA.getSelectedIndex()).setRap(rec);
+       JOptionPane.showMessageDialog(null, "Nadador Editado");
+       SwimmerName.setText("");
+       Age.setText("");
+       Height.setText("");
+       
+       RecordTime.setText("");
+       MedalsIn.setText("");
+       CBNA.setModel(updateComboboxN());
+        }else{
+            JOptionPane.showMessageDialog(null, "Ya esta lleno Pibe");
+        }
+    }//GEN-LAST:event_MODNMouseClicked
+
+    private void DELETENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETENMouseClicked
+        swimmers.remove(CBNA.getSelectedIndex());
+        CBNA.setModel(updateComboboxN());
+    }//GEN-LAST:event_DELETENMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -611,6 +698,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CBEV;
     private javax.swing.JComboBox<String> CBN;
     private javax.swing.JComboBox<String> CBN1;
+    private javax.swing.JComboBox<String> CBNA;
     private javax.swing.JComboBox<String> CBNE;
     private javax.swing.JComboBox<String> CBNE1;
     private javax.swing.JComboBox<String> CBNE2;
@@ -620,9 +708,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CBNd2;
     private javax.swing.JComboBox<String> CBNd3;
     private javax.swing.JButton DELETEEVT;
+    private javax.swing.JButton DELETEN;
     private javax.swing.JTextField Height;
     private javax.swing.JTextField Height1;
     private javax.swing.JButton MODEV;
+    private javax.swing.JButton MODN;
     private javax.swing.JTextField MedalsC;
     private javax.swing.JTextField MedalsIn;
     private javax.swing.JTextField MedalsIn1;
@@ -652,6 +742,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
