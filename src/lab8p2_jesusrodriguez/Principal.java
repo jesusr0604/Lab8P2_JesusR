@@ -2,6 +2,8 @@
 package lab8p2_jesusrodriguez;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -33,11 +35,33 @@ public class Principal extends javax.swing.JFrame {
         Estilo = new javax.swing.JTextField();
         Distancia = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        SwimmerName = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        CBN = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        Age = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        Height = new javax.swing.JTextField();
+        Style = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Distance = new javax.swing.JTextField();
+        RecordTime = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        MedalsIn = new javax.swing.JTextField();
+        AddSwimmer = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        NameP = new javax.swing.JTextField();
+        MedalsC = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        ADDCOUNTRY = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -75,41 +99,15 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Evento", jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Crear Nadador", jPanel4);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Crear Pais", jPanel5);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 630, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 854, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar Evento", jPanel2);
@@ -118,11 +116,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 630, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 854, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar Nadador", jPanel6);
@@ -131,39 +129,195 @@ public class Principal extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 630, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 854, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Modificar/Eliminar", jPanel7);
+
+        jPanel4.setBackground(new java.awt.Color(51, 0, 153));
+
+        jLabel4.setText("Nombre");
+
+        jLabel5.setText("Nacionalidad");
+
+        CBN.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel6.setText("Edad");
+
+        jLabel7.setText("Estatura");
+
+        jLabel8.setText("Estilo");
+
+        jLabel9.setText("Distancia");
+
+        jLabel10.setText("Tiempo Record");
+
+        jLabel11.setText("Medallas");
+
+        AddSwimmer.setText("Agregar Nadador");
+        AddSwimmer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddSwimmerMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel6)
+                        .addComponent(CBN, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addComponent(SwimmerName)
+                        .addComponent(jLabel4)
+                        .addComponent(Age)
+                        .addComponent(Height)
+                        .addComponent(Style)
+                        .addComponent(Distance, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RecordTime, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(MedalsIn))
+                        .addGap(118, 118, 118))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddSwimmer, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SwimmerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Height, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Style, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Distance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RecordTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MedalsIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(AddSwimmer, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(515, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Crear Nadador", jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel12.setBackground(new java.awt.Color(255, 102, 0));
+        jLabel12.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel12.setText("Nombre");
+
+        jLabel13.setBackground(new java.awt.Color(255, 102, 0));
+        jLabel13.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel13.setText("Medallas");
+
+        ADDCOUNTRY.setText("AGREGAR PAIS");
+        ADDCOUNTRY.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ADDCOUNTRYMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MedalsC, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NameP, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ADDCOUNTRY, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ADDCOUNTRY, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NameP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MedalsC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(544, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Crear Pais", jPanel5);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 630, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 854, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Simulacion", jPanel8);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 6, -1, -1));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 6, 630, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
         );
 
         pack();
@@ -174,12 +328,46 @@ public class Principal extends javax.swing.JFrame {
        double record= Double.parseDouble(Record.getText());
        int distance= Integer.parseInt(Distancia.getText());
        event.add(new Evento(Style,distance,record));
+        JOptionPane.showMessageDialog(null, "Evento Creado");
+        
        
        Estilo.setText("");
        Record.setText("");
        Distancia.setText("");
        
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void AddSwimmerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddSwimmerMouseClicked
+       String name= SwimmerName.getText();
+       Pais countries = Country.get(CBN.getSelectedIndex());
+       int edad= Integer.parseInt(Age.getText());
+       double es= Double.parseDouble(Height.getText());
+       String style= Style.getText();
+       int distancia= Integer.parseInt(Distance.getText());
+       int rec= Integer.parseInt(RecordTime.getText());
+       int medals= Integer.parseInt(MedalsIn.getText());
+       swimmers.add(new Nadadores(name,countries,edad,es,style,distancia,rec,medals));
+       JOptionPane.showMessageDialog(null, "Nadador Agregado");
+       SwimmerName.setText("");
+       Age.setText("");
+       Height.setText("");
+       Style.setText("");
+       Distance.setText("");
+       RecordTime.setText("");
+       MedalsIn.setText("");
+       
+    }//GEN-LAST:event_AddSwimmerMouseClicked
+
+    private void ADDCOUNTRYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ADDCOUNTRYMouseClicked
+        String namep= NameP.getText();
+        int medalsp= Integer.parseInt(MedalsC.getText());
+        Country.add(new Pais(namep,medalsp));
+        NameP.setText("");
+        MedalsC.setText("");
+        JOptionPane.showMessageDialog(null, "Pais Agregado");
+        CBN.setModel(updateComboboxC());
+        
+    }//GEN-LAST:event_ADDCOUNTRYMouseClicked
 
     /**
      * @param args the command line arguments
@@ -215,16 +403,48 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+     public DefaultComboBoxModel updateComboboxC() {
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Pais v : Country) {
+            model.addElement(v);
+
+        }
+        return model;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADDCOUNTRY;
+    private javax.swing.JButton AddSwimmer;
+    private javax.swing.JTextField Age;
+    private javax.swing.JComboBox<String> CBN;
+    private javax.swing.JTextField Distance;
     private javax.swing.JTextField Distancia;
     private javax.swing.JTextField Estilo;
+    private javax.swing.JTextField Height;
+    private javax.swing.JTextField MedalsC;
+    private javax.swing.JTextField MedalsIn;
+    private javax.swing.JTextField NameP;
     private javax.swing.JTextField Record;
+    private javax.swing.JTextField RecordTime;
+    private javax.swing.JTextField Style;
+    private javax.swing.JTextField SwimmerName;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

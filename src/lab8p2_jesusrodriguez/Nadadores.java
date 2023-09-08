@@ -4,7 +4,8 @@ package lab8p2_jesusrodriguez;
 
 public class Nadadores {
     private String nombre;
-    private String nacion;
+    private Pais nacion;
+    private String nacional;
     private int edad;
     private double height;
     private String nadar;
@@ -12,15 +13,16 @@ public class Nadadores {
     private int rap;
     private int medals;
 
-    public Nadadores(String nombre, String nacion, int edad, double height, String nadar, int dis, int rap, int medals) {
+    public Nadadores(String nombre, Pais nacion, int edad, double height, String nadar, int dis, int rap, int medals) {
         this.nombre = nombre;
-        this.nacion = nacion;
+        this.nacional =nacion.getName() ;
         this.edad = edad;
         this.height = height;
         this.nadar = nadar;
         this.dis = dis;
         this.rap = rap;
         this.medals = medals;
+        this.nacion= nacion;
     }
 
     public String getNombre() {
@@ -31,11 +33,11 @@ public class Nadadores {
         this.nombre = nombre;
     }
 
-    public String getNacion() {
+    public Pais getNacion() {
         return nacion;
     }
 
-    public void setNacion(String nacion) {
+    public void setNacion(Pais nacion) {
         this.nacion = nacion;
     }
 

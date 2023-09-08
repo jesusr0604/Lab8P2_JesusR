@@ -9,6 +9,11 @@ public class Pais {
     private ArrayList<Nadadores> nadador;
     private int medallas;
 
+    public Pais(String name, int medallas) {
+        this.name = name;
+        this.medallas = medallas;
+    }
+
     public Pais(String name, ArrayList<Nadadores> nadador, int medallas) {
         this.name = name;
         this.nadador = nadador;
