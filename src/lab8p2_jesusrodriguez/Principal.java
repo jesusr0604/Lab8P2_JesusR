@@ -17,6 +17,8 @@ public class Principal extends javax.swing.JFrame {
     private ArrayList<Nadadores> swimmers= new ArrayList();
     private ArrayList<Pais> Country= new ArrayList();
     private ArrayList<Evento> event= new ArrayList();
+    
+    
  
     public Principal() {
         initComponents();
@@ -608,6 +610,7 @@ public class Principal extends javax.swing.JFrame {
             swimmers.get(CBNA.getSelectedIndex()).setDis(distance);
             swimmers.get(CBNA.getSelectedIndex()).setNadar(Style);
             swimmers.get(CBNA.getSelectedIndex()).setRap(rec);
+            
             binNad();
             JOptionPane.showMessageDialog(null, "Nadador Editado");
             SwimmerName1.setText("");
