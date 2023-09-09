@@ -560,7 +560,7 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Listar", jPanel9);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 630, -1));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 630, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -625,13 +625,19 @@ public class Principal extends javax.swing.JFrame {
             CMBN1.setModel(updateComboboxN());
             CMBN2.setModel(updateComboboxN());
             CMBN3.setModel(updateComboboxN());
-        
+        an.leerN();
+                an.getnad().remove(CBNA.getSelectedIndex());
+        //Pais countries=null;
+               // an.getnad().add(CBNA.getSelectedIndex(), (new Nadadores(name,countries,edad,es,Style,distance,rec,medals)));
+                an.binNad();
            
     }//GEN-LAST:event_MODNMouseClicked
 
     private void DELETENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETENMouseClicked
         swimmers.remove(CBNA.getSelectedIndex());
-        binNad();
+       an.leerN();
+            an.getnad().remove(CBNA.getSelectedIndex());
+            an.binNad();
         CBNA.setModel(updateComboboxN());
         CMBN1.setModel(updateComboboxN());
             CMBN2.setModel(updateComboboxN());
@@ -711,7 +717,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void DELETEEVTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEEVTMouseClicked
         event.remove(CBEV.getSelectedIndex());
-        binEVT();
+        ae.leerEVT();
+            ae.getEvts().remove(CBEV.getSelectedIndex());
+            ae.binEVT();
         CBEV.setModel(updateComboboxE());
         CMBE5.setModel(updateComboboxE());
     }//GEN-LAST:event_DELETEEVTMouseClicked
@@ -747,6 +755,12 @@ public class Principal extends javax.swing.JFrame {
         binEVT();
         CBEV.setModel(updateComboboxE());
         CMBE5.setModel(updateComboboxE());
+        
+         ae.leerEVT();
+            ae.add(new Evento(CBNE2.getSelectedItem().toString(),
+                    Integer.parseInt(CBNd2.getSelectedItem().toString()),
+                    Double.parseDouble(Record1.getText())));
+            ae.binEVT();
         JOptionPane.showMessageDialog(null, "Evento Modificado");
     }//GEN-LAST:event_MODEVMouseClicked
 
@@ -776,6 +790,11 @@ public class Principal extends javax.swing.JFrame {
         binEVT();
         CBEV.setModel(updateComboboxE());
         CMBE5.setModel(updateComboboxE());
+        ae.leerEVT();
+            ae.add(new Evento(CBNE.getSelectedItem().toString(),
+                    Integer.parseInt(CBNd1.getSelectedItem().toString()),
+                    Double.parseDouble(Record.getText())));
+            ae.binEVT();
         JOptionPane.showMessageDialog(null, "Evento Creado");
 
         Record.setText("");
