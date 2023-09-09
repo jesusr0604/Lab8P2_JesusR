@@ -1,6 +1,12 @@
 
 package lab8p2_jesusrodriguez;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -78,6 +84,10 @@ public class Principal extends javax.swing.JFrame {
         CMBN2 = new javax.swing.JComboBox<>();
         CMBN3 = new javax.swing.JComboBox<>();
         jLabel27 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        jProgressBar3 = new javax.swing.JProgressBar();
+        jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         CBNE3 = new javax.swing.JComboBox<>();
         SwimmerName1 = new javax.swing.JTextField();
@@ -298,7 +308,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CBNd, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(901, Short.MAX_VALUE))
+                .addContainerGap(811, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Nadador", jPanel4);
@@ -349,7 +359,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MedalsC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(973, Short.MAX_VALUE))
+                .addContainerGap(883, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Pais", jPanel5);
@@ -362,18 +372,17 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel27.setText("Nadador 3");
 
+        jButton2.setText("Simular");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(228, 228, 228)
                         .addComponent(CMBE5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(CMBN1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(jLabel21))
@@ -381,15 +390,27 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(59, 59, 59)
                         .addComponent(jLabel26))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(CMBN2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(CMBN3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jLabel27)))
-                .addContainerGap(255, Short.MAX_VALUE))
+                        .addComponent(jLabel27))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(CMBN2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(CMBN1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(CMBN3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,16 +420,24 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CMBN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CMBN1))
                 .addGap(20, 20, 20)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CMBN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CMBN2))
                 .addGap(20, 20, 20)
                 .addComponent(jLabel27)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CMBN3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1054, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jProgressBar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CMBN3))
+                .addGap(37, 37, 37)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(884, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Simulacion", jPanel8);
@@ -479,7 +508,15 @@ public class Principal extends javax.swing.JFrame {
             new String [] {
                 "Nombre", "Nacionalidad", "Edad", "Estatura", "Estilo", "Distancia", "Record", "Medallas"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         TablaL.setText("Actualizar");
@@ -514,7 +551,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(CBL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(149, 149, 149)
                         .addComponent(TablaL)))
-                .addContainerGap(895, Short.MAX_VALUE))
+                .addContainerGap(805, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar", jPanel9);
@@ -571,6 +608,7 @@ public class Principal extends javax.swing.JFrame {
             swimmers.get(CBNA.getSelectedIndex()).setDis(distance);
             swimmers.get(CBNA.getSelectedIndex()).setNadar(Style);
             swimmers.get(CBNA.getSelectedIndex()).setRap(rec);
+            binNad();
             JOptionPane.showMessageDialog(null, "Nadador Editado");
             SwimmerName1.setText("");
             Age1.setText("");
@@ -588,6 +626,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void DELETENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETENMouseClicked
         swimmers.remove(CBNA.getSelectedIndex());
+        binNad();
         CBNA.setModel(updateComboboxN());
         CMBN1.setModel(updateComboboxN());
             CMBN2.setModel(updateComboboxN());
@@ -598,6 +637,7 @@ public class Principal extends javax.swing.JFrame {
         String namep= NameP.getText();
         int medalsp= Integer.parseInt(MedalsC.getText());
         Country.add(new Pais(namep,medalsp));
+        binPais();
         NameP.setText("");
         MedalsC.setText("");
         JOptionPane.showMessageDialog(null, "Pais Agregado");
@@ -636,6 +676,7 @@ public class Principal extends javax.swing.JFrame {
         if (countries.getNadador().size()<2) {
             countries.getNadador().add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
             swimmers.add(new Nadadores(name,countries,edad,es,Style,distance,rec,medals));
+           binNad();
             JOptionPane.showMessageDialog(null, "Nadador Agregado");
             SwimmerName.setText("");
             Age.setText("");
@@ -655,6 +696,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void DELETEEVTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEEVTMouseClicked
         event.remove(CBEV.getSelectedIndex());
+        binEVT();
         CBEV.setModel(updateComboboxE());
         CMBE5.setModel(updateComboboxE());
     }//GEN-LAST:event_DELETEEVTMouseClicked
@@ -687,6 +729,7 @@ public class Principal extends javax.swing.JFrame {
         event.get(CBEV.getSelectedIndex()).setDistancia(distance);
         event.get(CBEV.getSelectedIndex()).setEstilo(Style);
         event.get(CBEV.getSelectedIndex()).setRecord(record);
+        binEVT();
         CBEV.setModel(updateComboboxE());
         CMBE5.setModel(updateComboboxE());
         JOptionPane.showMessageDialog(null, "Evento Modificado");
@@ -715,6 +758,7 @@ public class Principal extends javax.swing.JFrame {
             distance=800;
         }
         event.add(new Evento(Style,distance,record));
+        binEVT();
         CBEV.setModel(updateComboboxE());
         CMBE5.setModel(updateComboboxE());
         JOptionPane.showMessageDialog(null, "Evento Creado");
@@ -818,6 +862,142 @@ public class Principal extends javax.swing.JFrame {
             return modl;
         }
       
+        
+        public void binPais(){
+            File archivo= new File("./Datos.pz");
+            FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            fw = new FileOutputStream(archivo);
+            bw = new ObjectOutputStream(fw);
+            for (Pais t : Country) {
+                bw.writeObject(t);
+            }
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+            }
+        }
+        }
+        
+        public void binNad(){
+             File archivo= new File("./Datos.nad");
+            FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            fw = new FileOutputStream(archivo);
+            bw = new ObjectOutputStream(fw);
+            for (Nadadores t : swimmers) {
+                bw.writeObject(t);
+            }
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+            }
+        }
+        }
+        
+        public void binEVT(){
+            File archivo= new File("./Datos.evt");
+            FileOutputStream fw = null;
+        ObjectOutputStream bw = null;
+        try {
+            fw = new FileOutputStream(archivo);
+            bw = new ObjectOutputStream(fw);
+            for ( Evento t : event) {
+                bw.writeObject(t);
+            }
+            bw.flush();
+        } catch (Exception ex) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception ex) {
+            }
+        } 
+        }
+        
+        
+        public void leerN(){
+            try {            
+            File ar= new File("./Datos.nad");
+            Nadadores temp;
+            if (ar.exists()) {
+                FileInputStream entrada
+                    = new FileInputStream(ar);
+                ObjectInputStream objeto
+                    = new ObjectInputStream(entrada);
+                try {
+                    while ((temp = (Nadadores) objeto.readObject()) != null) {
+                        swimmers.add(temp);
+                    }
+                } catch (EOFException e) {
+                    //encontro el final del archivo
+                }
+                objeto.close();
+                entrada.close();
+            }            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        }
+        
+         public void leerEVT(){
+            try {            
+            File ar= new File("./Datos.evt");
+            Evento temp;
+            if (ar.exists()) {
+                FileInputStream entrada
+                    = new FileInputStream(ar);
+                ObjectInputStream objeto
+                    = new ObjectInputStream(entrada);
+                try {
+                    while ((temp = (Evento) objeto.readObject()) != null) {
+                        event.add(temp);
+                    }
+                } catch (EOFException e) {
+                    //encontro el final del archivo
+                }
+                objeto.close();
+                entrada.close();
+            }            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+         }
+          public void leerP(){
+            try {            
+            File ar= new File("./Datos.pz");
+            Pais temp;
+            if (ar.exists()) {
+                FileInputStream entrada
+                    = new FileInputStream(ar);
+                ObjectInputStream objeto
+                    = new ObjectInputStream(entrada);
+                try {
+                    while ((temp = (Pais) objeto.readObject()) != null) {
+                        Country.add(temp);
+                    }
+                } catch (EOFException e) {
+                    //encontro el final del archivo
+                }
+                objeto.close();
+                entrada.close();
+            }            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+          }
+        
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ADDCOUNTRY;
@@ -858,6 +1038,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField SwimmerName1;
     private javax.swing.JButton TablaL;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -894,6 +1075,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
