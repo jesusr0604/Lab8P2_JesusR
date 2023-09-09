@@ -38,8 +38,7 @@ public class AdP {
     }
 
     public void binNad() {
-        File archivo = new File("./Datos.nad");
-        FileOutputStream fw = null;
+         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
         try {
             fw = new FileOutputStream(archivo);
@@ -59,14 +58,14 @@ public class AdP {
     }
 
     public void leerP() {
-        try {
-            File ar = new File("./Datos.pz");
+       try {           
+            country = new ArrayList();
             Pais temp;
-            if (ar.exists()) {
+            if (archivo.exists()) {
                 FileInputStream entrada
-                        = new FileInputStream(ar);
+                    = new FileInputStream(archivo);
                 ObjectInputStream objeto
-                        = new ObjectInputStream(entrada);
+                    = new ObjectInputStream(entrada);
                 try {
                     while ((temp = (Pais) objeto.readObject()) != null) {
                         country.add(temp);
@@ -76,10 +75,14 @@ public class AdP {
                 }
                 objeto.close();
                 entrada.close();
-            }
+            }            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public void add(Pais pais){
+        country.add(pais);
     }
 
 }

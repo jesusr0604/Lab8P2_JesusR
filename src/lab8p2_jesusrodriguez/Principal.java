@@ -17,7 +17,9 @@ public class Principal extends javax.swing.JFrame {
     private ArrayList<Nadadores> swimmers= new ArrayList();
     private ArrayList<Pais> Country= new ArrayList();
     private ArrayList<Evento> event= new ArrayList();
-    
+     AdP ap = new AdP("./PaisesParticipantes.lab");
+    ADN an = new ADN("./Nadadores.lab");
+    ADE ae = new ADE("./Eventos.lab");
     
  
     public Principal() {
@@ -558,7 +560,7 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Listar", jPanel9);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 630, -1));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 630, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -646,6 +648,9 @@ public class Principal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Pais Agregado");
         CBN.setModel(updateComboboxC());
         CBL.setModel(updateComboboxC());
+        ap.leerP();
+        ap.add(new Pais(NameP.getText(), Integer.parseInt(MedalsC.getText())));
+                ap.binNad();
 
     }//GEN-LAST:event_ADDCOUNTRYMouseClicked
 
@@ -691,6 +696,13 @@ public class Principal extends javax.swing.JFrame {
             CMBN2.setModel(updateComboboxN());
             CMBN3.setModel(updateComboboxN());
             CBNA.setModel(updateComboboxN());
+            
+             an.leerN();
+                an.add(new Nadadores(name, countries, edad, es, Style, distance, rec, medals));
+                an.binNad();
+                ap.leerP();
+                ap.getcountry().get(CBN.getSelectedIndex()).getNadador().add(new Nadadores(name, countries, edad, es, Style, distance, rec, medals));
+                ap.binNad();
         }else{
             JOptionPane.showMessageDialog(null, "Ya esta lleno Pibe");
         }
@@ -906,6 +918,9 @@ public class Principal extends javax.swing.JFrame {
             } catch (Exception ex) {
             }
         }
+
+
+      
         }
         
         public void binEVT(){

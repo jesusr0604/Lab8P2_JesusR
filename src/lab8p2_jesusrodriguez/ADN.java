@@ -36,7 +36,6 @@ public class ADN {
     }
     
     public void binNad(){
-             File archivo= new File("./Datos.nad");
             FileOutputStream fw = null;
         ObjectOutputStream bw = null;
         try {
@@ -57,12 +56,12 @@ public class ADN {
         }
     
     public void leerN(){
-            try {            
-            File ar= new File("./Datos.nad");
+             try {
+            nad = new ArrayList();
             Nadadores temp;
-            if (ar.exists()) {
+            if (archivo.exists()) {
                 FileInputStream entrada
-                    = new FileInputStream(ar);
+                    = new FileInputStream(archivo);
                 ObjectInputStream objeto
                     = new ObjectInputStream(entrada);
                 try {
@@ -79,5 +78,7 @@ public class ADN {
             ex.printStackTrace();
         }
         }
-    
+     public void add(Nadadores nadador){
+        nad.add(nadador);
+    }
 }

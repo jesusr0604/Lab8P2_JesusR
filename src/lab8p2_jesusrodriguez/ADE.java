@@ -39,13 +39,12 @@ public class ADE {
         this.archivo = archivo;
     }
      public void binEVT(){
-            File archivo= new File("./Datos.evt");
-            FileOutputStream fw = null;
+          FileOutputStream fw = null;
         ObjectOutputStream bw = null;
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for ( Evento t : evts) {
+            for (Evento t : evts) {
                 bw.writeObject(t);
             }
             bw.flush();
@@ -56,17 +55,17 @@ public class ADE {
                 fw.close();
             } catch (Exception ex) {
             }
-        } 
+        }
         }
      
      
      public void leerEVT(){
-            try {            
-            File ar= new File("./Datos.evt");
+            try {
+            evts = new ArrayList();
             Evento temp;
-            if (ar.exists()) {
+            if (archivo.exists()) {
                 FileInputStream entrada
-                    = new FileInputStream(ar);
+                    = new FileInputStream(archivo);
                 ObjectInputStream objeto
                     = new ObjectInputStream(entrada);
                 try {
@@ -74,7 +73,7 @@ public class ADE {
                         evts.add(temp);
                     }
                 } catch (EOFException e) {
-                    //encontro el final del archivo
+                    
                 }
                 objeto.close();
                 entrada.close();
@@ -83,4 +82,8 @@ public class ADE {
             ex.printStackTrace();
         }
          }
+     
+     public void add(Evento evento){
+        evts.add(evento);
+    }
 }
